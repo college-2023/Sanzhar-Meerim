@@ -1,0 +1,31 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title%}Log in{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<div class="container" style="margin-top: 30px;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4" style="color: white;">Sign In Now</legend>
+            {{ form.email.label }}
+            {{ form.email }}
+        </fieldset>
+        {% if user.is_authenticated %}
+        <a href="{% url 'home' %}" class="btn" style="color: white; background-color: rgb(42, 129, 196);" type="submit">
+            Sign in </a>
+        {% else %}
+        <a class="btn" style="color: white; background-color: #fd5e14;" type="submit">
+            Create Account </a>
+        {% endif %}
+        <div class="form-group">
+            <small class="text-muted ml-3">Don't have an account yet? <a href="{% url 'register' %}">Sign Up
+                Today</a></small>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
