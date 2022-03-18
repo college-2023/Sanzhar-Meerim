@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'journal',
-        'USER': 'postgres',
+        'NAME': 'sqlite3',
+        'USER': 'sqlite3',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
         'PORT': '5432',
