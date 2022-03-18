@@ -6,10 +6,10 @@
 <a href="{% url 'register' %}" class="btn btn-primary" type="submit">
     Sign up </a>
 {% else %}
-<a class="btn" style="color: white; background-color: #fd5e14;" type="submit">
-    Create Account </a>
-<a class="btn" style="color: white; background-color: #fd5e14; margin-left: 10px; "
+<a href="{% url 'register' %}" class="btn" style="color: white; background-color: #fd5e14;" type="submit">
+    Sign up </a>
+<a href="{% url 'login' %}" class="btn" style="color: white; background-color: #fd5e14; margin-left: 10px; "
    type="submit"
->Log In</a>
+>Sign In</a>
 {% endif %}
 {% endblock %}

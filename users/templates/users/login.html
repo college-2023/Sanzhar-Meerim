@@ -17,8 +17,8 @@
         <a href="{% url 'home' %}" class="btn" style="color: white; background-color: rgb(42, 129, 196);" type="submit">
             Sign in </a>
         {% else %}
-        <a class="btn" style="color: white; background-color: #fd5e14;" type="submit">
-            Create Account </a>
+        <a href="{% url 'register' %}" class="btn" style="color: white; background-color: #fd5e14;" type="submit">
+            Sign in </a>
         {% endif %}
         <div class="form-group">
             <small class="text-muted ml-3">Don't have an account yet? <a href="{% url 'register' %}">Sign Up
