@@ -5,17 +5,14 @@ from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
 
 
-@login_required(login_url='login')
 def dom(request):
     return render(request, 'users/home.html')
 
 
-@login_required(login_url='login')
 def home(request):
     return render(request, 'users/time_table.html')
 
 
-@login_required(login_url='login')
 def loginPage(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -33,18 +30,15 @@ def loginPage(request):
         return render(request, 'users/login.html', context)
 
 
-@login_required(login_url='login')
 def profile(request):
     return render(request, 'users/profile.html')
 
 
-@login_required(login_url='login')
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('dom')
 
 
-@login_required(login_url='login')
 def registerPage(request):
     if request.user.is_authenticated:
         redirect('home')
