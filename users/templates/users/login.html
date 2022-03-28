@@ -5,38 +5,44 @@
 {% block title%}Log in{% endblock %}
 {% block login %}
 
-<div class="login-box">
-<h2>Login</h2>
-<form method="POST" action="">
-        {% csrf_token %}
+<div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+        <div class="d-flex justify-content-center">
 
-<div class="user-box">
-    <input type="text" name="" required="">
-    <label>Username</label>
+
+            <h3 id="form-title">LOGIN</h3>
+        </div>
+        <div class="demo">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div id="input-group mb-3">
+                    <input type="text" name="username" placeholder="Username" class="form-control">
+                </div>
+                <div id="input-group mb-2">
+                    <input type="password" name="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                    <button class="btn ">Sign in</button>
+                </div>
+            </form>
+
+        </div>
+        {% for message in messages%}
+        <p id="messages">{{message}}</p>
+        {% endfor %}
+        <div class="mt-4">
+            <div class="d-flex justify-content-center links">
+                Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+            </div>
+
+        </div>
+    </div>
 </div>
-<div class="user-box">
-    <input type="password" name="" required="">
-    <label>Password</label>
-</div>
-<a href="#">
-    <span></span>
-    <span></span>
-
-    <span></span>
-            <span></span> Sign In
-        </a>
-    </form>
-</div>
-
-<!--{% for message in messages%}-->
-<!--<p id="messages">{{message}}</p>-->
-<!--{% endfor %}-->
-<!--<div class="mt-4">-->
-<!--    <div class="d-flex justify-content-center links">-->
-<!--        Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>-->
-<!--    </div>-->
 
 
-{% endblock %}
+    {% endblock %}
+
+
+
 
 
