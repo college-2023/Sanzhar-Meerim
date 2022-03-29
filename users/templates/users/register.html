@@ -6,7 +6,7 @@
 {% block register %}
 
 
-<div class="d-flex justify-content-center h-100">
+<div class="main_container">
     <div class="user_card">
         <div class="d-flex justify-content-center">
             <h3 id="form-title">REGISTER ACCOUNT</h3>
@@ -15,7 +15,7 @@
 
             <form method="POST" action="">
                 {% csrf_token %}
-                <div class="input-group mb-3">
+                <div class="input-group mb-2">
                     {{ form.username.label }}
                     {{ form.username }}
                 </div>
