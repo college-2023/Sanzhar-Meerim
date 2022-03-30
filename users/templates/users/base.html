@@ -49,6 +49,17 @@
             outline: none;
             background: transparent;
         }
+        .main_container .user_card .demo .input{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
          .main_container .user_card .demo label {
             position: absolute;
             top: 0;
@@ -61,6 +72,13 @@
         }
         .main_container .user_card .demo input:focus~label,
         .main_container .user_card .demo input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+        .main_container .user_card .demo .input:focus~label,
+        .main_container .user_card .demo .input:valid~label {
             top: -20px;
             left: 0;
             color: #03e9f4;
@@ -90,6 +108,9 @@
             height: 2px;
             background: linear-gradient(90deg, transparent, #03e9f4);
             animation: btn-anim1 1s linear infinite;
+        }
+        .labe {
+        color: white;
         }
     </style>
     <title>{% block title %}{% endblock %}</title>
