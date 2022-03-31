@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'journal',
-        'USER': 'postgres',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite3',
+        'USER': 'sqlite3',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -130,3 +130,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# LOGIN_REDIRECT_URL = 'home'
