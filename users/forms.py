@@ -11,20 +11,20 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-
-class UserInfoForm(ModelForm):
-    class Meta:
-        model = User
-        fields = ['name', 'email']
-        widgets = {
-            'name': TextInput(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;',
-                'placeholder': 'Name'
-            }),
-            'email': EmailInput(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;',
-                'placeholder': 'Email'
-            })
-        }
+#
+# class UserInfoForm(ModelForm):
+#     class Meta:
+#         model = User
+#         fields = ['name', 'email']
+#         widgets = {
+#             'name': TextInput(attrs={
+#                 'class': "form-control",
+#                 'style': 'max-width: 300px;',
+#                 'placeholder': 'Name'
+#             }),
+#             'email': EmailInput(attrs={
+#                 'class': "form-control",
+#                 'style': 'max-width: 300px;',
+#                 'placeholder': 'Email'
+#             })
+#         }

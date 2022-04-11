@@ -7,7 +7,6 @@
     nemo delectus praesentium reiciendis consequuntur modi incidunt, dolorem suscipit aliquam consequatur deleniti
     iusto totam repudiandae?
 </p>
-<button class="btn btn-primary">Page about us</button>
 
 
 {% endblock %}
@@ -19,21 +18,17 @@
     margin-right: 20px;
     }
 </style>
-<a href="{% url 'profile' %}" class="btn btn-primary" style="margin-left: 800px;" type="submit">
-    Profile </a>
-<span class="hello-msg">Hello, {{request.user}}</span>
-<span class="hello-msg"><a href="{% url 'logout' %}" class="btn btn-primary" style="margin-left: 400px;" type="submit">
-            Logout </a></span>
+
 {% endblock %}
 {% block message %}
 <div>
-    <div class="container">
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-        {% endfor %}
-        {% endif %}
-    </div>
+<!--    <div class="container">-->
+<!--        {% if messages %}-->
+<!--        {% for message in messages %}-->
+<!--        <div class="alert alert-{{ message.tags }}">{{ message }}</div>-->
+<!--        {% endfor %}-->
+<!--        {% endif %}-->
+<!--    </div>-->
     {% block content %}
     {% endblock content %}
 </div>
