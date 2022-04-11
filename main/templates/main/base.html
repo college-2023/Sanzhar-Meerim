@@ -99,7 +99,6 @@
 </aside>
 <a href="{% url 'profile' %}" class="btn btn-primary" style="margin-left: 800px;" type="submit">
     Profile </a>
-<span class="hello-msg">Hello, {{request.user}}</span>
 <span class="hello-msg"><a href="{% url 'logout' %}" class="btn btn-primary" style="margin-left: 400px;" type="submit">
             Logout </a></span>
 <div>{% block message %}{% endblock %}</div>
