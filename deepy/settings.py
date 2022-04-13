@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'sqlite3',
-        'USER': 'sqlite3',
+        'ENGINE': 'django.db.backends.postgres',
+        'NAME': 'postgres',
+        'USER': 'deep_matrix',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '',
     }
 }
 
