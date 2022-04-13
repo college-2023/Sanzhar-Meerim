@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgres',
-        'NAME': 'postgres',
+        'NAME': 'postgresx',
         'USER': 'deep_matrix',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
