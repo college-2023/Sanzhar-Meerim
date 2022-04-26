@@ -52,9 +52,11 @@ python3 manage.py makemigrations
 ```
 python3 manage.py migrate
 ```
+>##### **try to modify inbound or outbound rules**
 ```
-python3 manage.py runserver 35.162.188.136:8000
+python3 manage.py runserver 172.31.5.254:8000
 ```
+
 ---
 > ### Database
 ```
