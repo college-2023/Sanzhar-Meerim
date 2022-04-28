@@ -26,6 +26,9 @@ source venv/bin/activate
 ```
 pip install django gunicorn psycopg2-binary pillow
 ```
+```
+pip3 install djangorestframework
+```
 > *in settings.py*
 ```
 STATIC_ROOT = BASE_DIR / 'static'
