@@ -17,17 +17,44 @@ jobs:
 
     steps:
     
-      - name: cleanup #https://github.com/actions/checkout/issues/211
-        run: |
-          sudo chown -R $USER:$USER $GITHUB_WORKSPACE
-          
+      - name: cleanup
+        run : |
+          sudo chown -R $USER:$USER $GITHUB_WORKSPACE          
+        
       - uses: actions/checkout@v2
+      
+      
+      - name: Activate venv
+        run : |
+          source env/bin/activate
+          
+          
+#      - name: Install required packages #1
+#        run : |
+#          pip3 install django gunicorn psycopg2-binary   
+       
+      - name: Install required packages #2
+        run : |
+          pip3 install -r req.txt    
+          
+      - name: Collectstatic
+        run : |
+          python3 manage.py collectstatic
+          
+      - name: Makemigrations
+        run : | 
+          python3 manage.py makemigrations
+          
+      - name: Migrate
+        run : |
+          python3 manage.py migrate
+        
       - name: Restart gunicorn
-        run: |
+        run : |
           sudo systemctl restart gunicorn
 
 
       - name: Restart nginx
-        run: |
+        run : |
           sudo systemctl restart nginx
 
