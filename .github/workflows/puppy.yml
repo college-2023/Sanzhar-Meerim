@@ -36,9 +36,6 @@ jobs:
         run : |
           pip3 install django gunicorn psycopg2-binary   
           
-      - name: Check if Gunicorn is installed
-        run : |
-           which gunicorn
          
 #      - name: Install required packages #2
 #        run : |
