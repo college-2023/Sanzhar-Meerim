@@ -32,14 +32,27 @@ jobs:
           source env/bin/activate
           
           
-#      - name: Install required packages #1
-#        run : |
-#          pip3 install django gunicorn psycopg2-binary   
-       
-      - name: Install required packages #2
+      - name: Install required packages #1
         run : |
-          pip3 install -r req.txt    
+          pip3 install django gunicorn psycopg2-binary   
+       
+#      - name: Install required packages #2
+#        run : |
+#          pip3 install -r req.txt    
           
+      - name:   Installing Django
+        run : |
+          pip3 install django
+          
+          
+      - name:   Installing Crispy Forms
+        run : |
+          pip3 install django-crispy-forms
+          
+      - name:   Installing Psycopg2
+        run : |
+           pip3 install psycopg2-binary
+         
       - name: Collectstatic
         run : |
           python3 manage.py collectstatic
