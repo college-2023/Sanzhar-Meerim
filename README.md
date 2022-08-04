@@ -66,7 +66,7 @@ sudo -u postgres psql
 CREATE DATABASE posgresx;
 ```
 ```
-CREATE USER deep_matrix WITH PASSWORD '12345678';
+CREATE USER deep_matrix WITH PASSWORD '1';
 ```
 ```
 ALTER ROLE deep_matrix SET client_encoding TO 'utf8';
