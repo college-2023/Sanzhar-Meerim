@@ -19,7 +19,7 @@ services:
  database:
   image: postgres:11 #import postgre
   volumes:
-   - postgres_data:/home/ubuntu/actions-runner/_work/Online-Recording-System/Online-Recording-System
+   - postgres_data:/home/ubuntu/actions-runner/_work/Online-Recording-System/Online-Recording-System/data
   ports:
    - 5432:5432
   environment:
