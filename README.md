@@ -30,6 +30,20 @@ pip install django gunicorn psycopg2-binary pillow
 ```
 STATIC_ROOT = BASE_DIR / 'static'
 ```
+___
+```
+sudo chmod +x manage.py
+```
+```
+vi manage.py
+```
+> SHIFT + ;    -> set ff=unix   ->  SHIFT + ;      ->    wq   
+> so as the result you can run:
+```
+./manage.py migrate
+```
+___
+
 > ### packages
 ---
 ```
