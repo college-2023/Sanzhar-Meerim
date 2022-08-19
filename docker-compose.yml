@@ -1,32 +1,20 @@
-version: '3.8'
+version: "3.8"
+
 services:
- web:
- #build our image
-  build: .
-  command: python3 manage.py runserver 70.34.207.94:8000
-  environment:
-  #postgres__data
-   DEBUG: 1
-   POSTGRES_USER: puppy
-   POSTGRES_PASSWORD: puppy
-   POSTGRES_DB: puppy
-   POSTGRES_HOST: 70.34.207.94 #our-ip
-  ports:
-   - 8000:8000
-  depends_on:
-   - database
-#add data base
- database:
-  image: postgres:11 #import postgre
-  volumes:
-   - postgres_data:/home/ubuntu/actions-runner/_work/Online-Recording-System/Online-Recording-System/data
-  ports:
-   - 5432:5432
-  environment:
-  #postgres__data
-   POSTGRES_USER: puppy
-   POSTGRES_PASSWORD: puppy
-   POSTGRES_DB: puppy
-   POSTGRES_HOST: 70.34.207.94 #our-ip
-volumes:
- postgres_data:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=tutorial_v2
+      - POSTGRES_USER=hello 
+      - POSTGRES_PASSWORD=1
+  web: 
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8002
+    volumes:
+      - ./data
+    ports:
+      - "8002:8002"
+    depends_on:
+      - db 
