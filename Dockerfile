@@ -2,10 +2,10 @@ FROM python:3.8
 
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /home/ubuntu/actions-runner/_work/Online-Recording-System/Online-Recording-System
+WORKDIR /home/ubuntu/tutorial-USA
 
 COPY . .
 
 RUN python -m pip install --upgrade pip setuptools wheel
 
-RUN pip3 install -r req.txt
+RUN pip install -r requirements.txt
