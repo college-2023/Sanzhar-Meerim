@@ -16,13 +16,18 @@ jobs:
 
     steps:
     
-      - name: cleanup
-        run : |
-          sudo chown -R $USER:$USER $GITHUB_WORKSPACE          
+#       - name: cleanup
+#         run : |
+#           sudo chown -R $USER:$USER $GITHUB_WORKSPACE          
         
         
       - uses: actions/checkout@v2  
-          
+
+      - name: Stop main container
+        run: | 
+          docker stop tutorial-usa_web_1 \
+          docker stop tutorial-usa_db_1 \
+
       - name: Docker-compose up
         run : |
           docker-compose up -d
