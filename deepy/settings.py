@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('puppy', default='puppy'),
-        'USER': os.environ.get('puppy', default='puppy'),
-        'PASSWORD': os.environ.get('puppy', default='puppy'),
-        "HOST": os.environ.get('70.34.207.94', default='70.34.207.94'),
-        "PORT": "5432",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tutorial_v2',
+        'USER': 'hello' ,
+        'PASSWORD': '1',
+        'HOST': 'db',
+        'PORT': 5432
     }
 }
 
