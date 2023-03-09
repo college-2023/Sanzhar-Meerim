@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres30',
-        'USER': 'postgres30',
-        'PASSWORD': 'postgres30',
+        'NAME': 'postgres301',
+        'USER': 'postgres301',
+        'PASSWORD': 'postgres301',
         'HOST': 'db',
         'PORT': 5432
     }
