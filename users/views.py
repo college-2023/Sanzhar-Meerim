@@ -1,54 +1,60 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import CustomUserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
-def dom(request):
-    return render(request, 'users/home.html')
+def main(request):
+    return render(request, 'users/index.html')
 
 
-def home(request):
-    return render(request, 'users/time_table.html')
-
-
-def loginPage(request):
+def loginUser(request):
     if request.user.is_authenticated:
-        return redirect('home')
-    else:
-        if request.method == "POST":
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-            else:
-                messages.info(request, 'Username or Password is incorrect')
-        context = {}
-        return render(request, 'users/login.html', context)
+        return redirect('/')
 
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
 
-def profile(request):
-    return render(request, 'users/profile.html')
+        try:
+            user = User.objects.get(username=username)
+        except:
+            messages.error(request, 'User does not exist')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'User has logged in')
+            return redirect('/')
+        else:
+            messages.error(request, 'incorrect pasw')
+
+    return render(request, 'users/login.html')
 
 
 def logoutUser(request):
     logout(request)
-    return redirect('dom')
+    messages.info(request, 'User has logged out')
+    return redirect('loginUser')
 
 
-def registerPage(request):
-    if request.user.is_authenticated:
-        redirect('home')
-    else:
-        form = UserRegisterForm()
-        if request.method == "POST":
-            form = UserRegisterForm(request.POST)
-            if form.is_valid():
-                form.save()
-                username = form.cleaned_data.get('username')
-                messages.success(request, f'Account was created for {username}')
-                return redirect('login')
+def registerUser(request):
+    form = CustomUserCreationForm()
+    context = {'form': form}
 
-        return render(request, 'users/register.html', {'form': form})
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'User has been created')
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('/')
+        else:
+            messages.error(request, 'Error')
+    return render(request, 'users/register.html', context)

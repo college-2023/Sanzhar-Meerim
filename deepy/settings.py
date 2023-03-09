@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'main',
     'users.apps.UsersConfig',
     'crispy_forms',
     'django.contrib.admin',
@@ -78,10 +77,10 @@ WSGI_APPLICATION = 'deepy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tutorial_v2',
-        'USER': 'hello' ,
-        'PASSWORD': '1',
-        'HOST': 'db',
+        'NAME': 'postgres30',
+        'USER': 'postgres30' ,
+        'PASSWORD': 'postgres30',
+        'HOST': 'localhost',
         'PORT': 5432
     }
 }
