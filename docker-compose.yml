@@ -6,9 +6,9 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres30
-      - POSTGRES_USER=postgres30 
-      - POSTGRES_PASSWORD=postgres30
+      - POSTGRES_DB=postgres301
+      - POSTGRES_USER=postgres301
+      - POSTGRES_PASSWORD=postgres301
   web: 
     build: .
     command: python3 manage.py runserver 0.0.0.0:8009
